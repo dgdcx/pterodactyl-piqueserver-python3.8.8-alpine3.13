@@ -8,9 +8,7 @@ RUN         apk update && \
             pip --version && \
             export TMPDIR='/var/tmp' && \
             pip install git+git://github.com/piqueserver/piqueserver.git@02a130832400332c94bfcfee7b4bff7b2274659a && \
-            apk del delete_me && \
-            mkdir -p /home/skeleton && \
-            piqueserver --copy-config -d /home/skeleton
+            apk del delete_me
 RUN         adduser -D -h /home/container container
 USER        container
 ENV         USER=container HOME=/home/container
