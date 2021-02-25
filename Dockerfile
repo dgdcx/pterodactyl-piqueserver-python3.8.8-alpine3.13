@@ -9,7 +9,7 @@ RUN         apk update && \
             export TMPDIR='/var/tmp' && \
             pip install git+git://github.com/piqueserver/piqueserver.git@02a130832400332c94bfcfee7b4bff7b2274659a && \
             apk del delete_me && \
-            apk add --non-cache libstdc++
+            apk add --no-cache libstdc++
 RUN         adduser -D -h /home/container container
 USER        container
 ENV         USER=container HOME=/home/container
